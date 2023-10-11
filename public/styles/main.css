@@ -1,0 +1,18 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+} 
+ 
+main {
+  width: 500px;
+  margin: 0 auto;
+  background-color: inherit;
+}
+
+section {
+  margin: 0 auto;
+  width: 500px;
+  background-color: white;
+}

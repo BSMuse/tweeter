@@ -8,6 +8,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  /* font-family: 'Source Sans 3', sans-serif; */
 }
 
 /*
@@ -16,8 +17,9 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
   font-size: 24px;
+  background-color: #B7C3F3;
+  background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
 }
 
 /*

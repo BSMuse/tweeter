@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+} 
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  background-color: white;
+  width: 500px;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+#tweet-text {
+  resize: none; 
+  border: none;
+  font-family:'Source Sans 3', sans-serif;
+  font-weight: 600;
+  width: 436px;
+  height: 2.5rem;
+  border-bottom: 3px solid #545149;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #4056A1;
+  color: white;
+  font-size: 1rem;
+  padding: 5px;
+  border: none;
+} 
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif; 
+}
+
+.red {
+  color: red;
+}
