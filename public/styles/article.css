@@ -1,14 +1,10 @@
 article {
   border: 2px solid #545149;
-  width: inherit;
-  margin: 2em 3em;
+  width: 95%;
+  margin: 0.5em 3em 0.5em 0.5em;
   font-family: 'Source Sans 3', sans-serif;
 }
 
-article {
-  width: 95%;
-  margin-bottom: 0.5rem;
-}
 
 article > header {
   height: 3rem;
