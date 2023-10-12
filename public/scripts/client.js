@@ -62,11 +62,11 @@ const createTweetElement = function(tweet) {
       <header>
         <div class="con-1">
           <img class='avatar' src="${tweet.user.avatars}">
-          <span class="username">${tweet.user.name}</span>
+          <span class="username">${$('<div>').text(tweet.user.name).html()}</span>
         </div>
-        <p class="handle">${tweet.user.handle}</p>
+        <p class="handle">${$('<div>').text(tweet.user.handle).html()}</p>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${$('<div>').text(tweet.content.text).html()}</p>
       <footer>
         <date>${daysAgo(tweet.created_at)} Days ago</date>
         <div class="icons-con">
@@ -77,8 +77,10 @@ const createTweetElement = function(tweet) {
       </footer>
     </article>`
   );
+
   return $tweet;
-}
+};
+
 
 loadTweets();
 });
