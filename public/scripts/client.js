@@ -27,6 +27,7 @@ $(document).ready(function() {
           console.error('POST request failed:', error);
         }
       }); 
+      loadTweets();
     } else {
       alert('Too many characters');
     }
@@ -43,7 +44,7 @@ $(document).ready(function() {
 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
-    $('.tweet-con').append(createTweetElement(tweet));
+    $('.tweet-con').prepend(createTweetElement(tweet));
   }
 }
 
