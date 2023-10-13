@@ -52,6 +52,9 @@ section {
   }
   main {
     margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 

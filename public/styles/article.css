@@ -1,10 +1,11 @@
 article {
   border: 2px solid #545149;
   width: 95%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   margin: 0.5em 3em 0.5em 0.5em;
   font-family: 'Source Sans 3', sans-serif;
 }
-
 
 article > .tweet-top {
   height: 3rem;

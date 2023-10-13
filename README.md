@@ -1,18 +1,77 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone designed for educational purposes. It allows users to post new tweets and view them in real-time using AJAX without needing to refresh the entire page.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Final Product](#final-product)
+- [License](#license)
+
+## Introduction
+
+Tweeter is a Twitter clone project created by Lighthouse Labs for web bootcamp students. It's designed to help students practice their front-end development skills, including HTML, CSS, JavaScript, jQuery, and AJAX, as well as their back-end development skills using Node.js and Express.
+
+## Features
+
+- Post new tweets.
+- View new tweets without having to refresh the page.
+- Practice front-end development skills, including HTML, CSS, JavaScript, jQuery, and AJAX.
+- Practice back-end development skills using Node.js and Express.
 
 ## Getting Started
 
+To get started with the Tweeter project, follow these steps:
+
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
+
 2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+
+3. Install project dependencies using the following command:
+
+   ```bash
+   npm install
+
+Start the web server by running the command:
+
+bash
+Copy code
+npm run local
+Open your web browser and go to [http://localhost:8080](http://localhost:8080) to access the Tweeter application.
 
 ## Dependencies
 
+The Tweeter project relies on the following dependencies:
+
 - Express
-- Node 5.10.x or above
+- Node.js 5.10.x or above
+
+In your `package.json`, the specific dependencies are as follows:
+
+- `body-parser` (version ^1.15.2)
+- `chance` (version ^1.0.2)
+- `express` (version ^4.13.4)
+- `md5` (version ^2.1.0)
+
+Additionally, for development purposes, it uses the following dev dependencies:
+
+- `eslint` (version ^8.51.0)
+- `nodemon` (version ^1.9.2)
+
+## Usage
+
+The Tweeter project allows you to practice your front-end and back-end development skills. Post new tweets and see them appear in real-time without having to refresh the page. Improve your web development knowledge by working on this Twitter-like application.
+
+## Final Product
+
+!["Screenshot of login page"](https://github.com/BSMuse/tinyapp/blob/master/docs/login_page.png?raw=true)
+!["Screenshot of TinyURL creation page"](https://github.com/BSMuse/tinyapp/blob/master/docs/create_tinyurl.png?raw=true)
+!["Screenshot of index for links"](https://github.com/BSMuse/tinyapp/blob/master/docs/index.png?raw=true)
+!["Screenshot of TinyURL edit page"](https://github.com/BSMuse/tinyapp/blob/master/docs/new_url.png?raw=true)
+
+## License
+
+This project is licensed under the ISC License.

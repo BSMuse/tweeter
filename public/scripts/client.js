@@ -4,9 +4,9 @@ $(document).ready(function() {
     const remainingCharacters = 140 - textLength;
     $('.counter').text(remainingCharacters);
 
-    if (remainingCharacters < 0) {
+    if (remainingCharacters <= -1) {
       $('.counter').addClass('red');
-    } else  if (remainingCharacters > 0) {
+    } else  if (remainingCharacters >= -1) {
       $('.counter').removeClass('red');
     }
   });
@@ -14,7 +14,7 @@ $(document).ready(function() {
 $('form').on('submit', (event) => {
   event.preventDefault();
   const formData = $('form').serialize(); 
-  if ($('#tweet-text').val().length < 140) {
+  if ($('#tweet-text').val().length < 141) {
     $(".long-warning").remove();
     $.ajax({
       type: 'POST', 
