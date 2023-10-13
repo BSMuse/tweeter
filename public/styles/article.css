@@ -6,7 +6,7 @@ article {
 }
 
 
-article > header {
+article > .tweet-top {
   height: 3rem;
   display: flex;
   justify-content: space-between;

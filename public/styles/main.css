@@ -1,24 +1,65 @@
-html {
+/*
+ * Box sizing is set globally
+ */
+ html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
-} 
- 
+}
+
+/*
+ * Global layout styles
+ */
+
 main {
-  width: 500px;
-  margin: 0 auto;
+  width: 100%;
+  margin-top: 120px;
   background-color: inherit;
 }
 
 section {
-  margin: 0 auto;
-  width: 500px;
+  width: 100%;
   background-color: white;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.long-warning {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: red;
+  border: red solid 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 90%;
 }
 
 .tweet-con {
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
-} 
+  max-width: 500px;
+}
 
+/*
+ * Media Query for Tablets
+ */
+@media screen and (max-width: 768px) {
+  main, section, .tweet-con {
+    max-width: 100%;
+  }
+  main {
+    margin-top: 0px;
+  }
+}
+
+/*
+ * Media Query for Desktop
+ */
+@media screen and (min-width: 769px) {
+  main, section, .tweet-con {
+    max-width: 500px;
+  }
+}

@@ -3,12 +3,11 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  /* font-family: 'Source Sans 3', sans-serif; */
 }
 
 /*
@@ -16,12 +15,37 @@ html {
  */
 
 body {
-  color: #545149;
   font-size: 24px;
-  background-color: #B7C3F3;
-  background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
+ * Media Query for Tablets
  */
+@media screen and (max-width: 768px) {
+  body, header, main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header, main {
+    width: 100%;
+  }
+}
+
+/*
+ * Media Query for Desktop
+ */
+@media screen and (min-width: 769px) {
+  body {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  main {
+    background-color: red;
+  }
+  
+  header, main {
+    flex: 1;
+  }
+}

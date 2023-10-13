@@ -15,6 +15,7 @@ $(document).ready(function() {
     event.preventDefault();
     const formData = $('form').serialize(); 
     if ($('#tweet-text').val().length < 140) {
+      $(".long-warning").remove();
       $.ajax({
         type: 'POST', 
         url: "/tweets",
@@ -29,7 +30,7 @@ $(document).ready(function() {
       }); 
       loadTweets();
     } else {
-      alert('Too many characters');
+      $("section").prepend(inputLengthWarning())
     }
 });
 
@@ -59,13 +60,13 @@ const daysAgo = (timestamp) => {
 const createTweetElement = function(tweet) {
   let $tweet = $(
     `<article>
-      <header>
+      <div class="tweet-top">
         <div class="con-1">
           <img class='avatar' src="${tweet.user.avatars}">
           <span class="username">${$('<div>').text(tweet.user.name).html()}</span>
         </div>
         <p class="handle">${$('<div>').text(tweet.user.handle).html()}</p>
-      </header>
+      </div>
       <p>${$('<div>').text(tweet.content.text).html()}</p>
       <footer>
         <date>${daysAgo(tweet.created_at)} Days ago</date>
@@ -81,6 +82,16 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+const inputLengthWarning = () => {
+  let $warning = $(
+    `<div class="long-warning">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <p>${$('<div>').text("WARNING! You are trying to submit too many characters!").html()}</p>
+      <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>`
+  );
+  return $warning;
+};
 
 loadTweets();
 });

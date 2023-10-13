@@ -26,17 +26,30 @@ nav > span {
   align-self: center;
 }
 
-.new-tweet {
+.write-new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 18rem;
 }
 
-.new-tweet > p {
+.write-new-tweet > p {
   margin-bottom: 0;
 }
 
-.new-tweet > i {
+.write-new-tweet > i {
   color: red;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    background-color: #B7C3F3;
+    background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
+  }
+
+  .write-new-tweet {
+    font-size: 0.5em;
+    margin-right: 0rem;
+  }
 }

@@ -7,18 +7,37 @@ html {
 
 header {
   display: flex;
-  width: 100%;
+  background-color: #B7C3F3;
+  background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
+  max-width: 400px;
   height: 400px;
   justify-content: center;
-  margin-bottom: 2em;
+  margin: 240px 2em 2em 2em;
+  border-radius: 10px;
 }
 
 .container {
   display: flex;
-  margin-top: 120px;
   flex-direction: column;
+  justify-content: center;
+  padding: 1em;
 }
 
 .name {
   text-align: center;
+  font-family: 'Source Sans 3', sans-serif;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    max-width: 100%;
+    margin: 120px 0 0;
+    border-radius: 0;
+  }
+  
+  .container > img {
+    width: 40%;
+    margin: 0 auto;
+  }
 }

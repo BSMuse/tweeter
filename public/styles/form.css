@@ -1,27 +1,36 @@
-html {
+/*
+ * Box sizing is set globally
+ */
+ html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
-} 
+}
 
+/*
+ * Global layout styles
+ */
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: space-between;
   background-color: white;
-  width: 500px;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 #tweet-text {
-  resize: none; 
+  resize: none;
   border: none;
-  font-family:'Source Sans 3', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   font-weight: 600;
-  width: 436px;
+  width: 100%;
+  max-width: 436px;
   height: 2.5rem;
   border-bottom: 3px solid #545149;
   margin-bottom: 1rem;
@@ -33,14 +42,36 @@ button {
   font-size: 1rem;
   padding: 5px;
   border: none;
-} 
+}
 
 .btn {
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', sans-serif; 
+  font-family: 'Bungee', sans-serif;
 }
 
 .red {
   color: red;
+}
+
+/*
+ * Media Query for Tablets
+ */
+@media screen and (max-width: 768px) {
+  form {
+    padding: 1rem;
+  }
+  
+  #tweet-text {
+    max-width: 100%;
+  }
+}
+
+/*
+ * Media Query for Desktop
+ */
+@media screen and (min-width: 769px) {
+  form {
+    padding: 2rem;
+  }
 }
