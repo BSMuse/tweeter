@@ -55,7 +55,7 @@ button {
 }
 
 /*
- * Media Query for Tablets
+ * Media Query for Mobile
  */
 @media screen and (max-width: 768px) {
   form {

@@ -11,37 +11,36 @@ $(document).ready(function() {
     }
   });
 
-  $('form').on('submit', (event) => {
-    event.preventDefault();
-    const formData = $('form').serialize(); 
-    if ($('#tweet-text').val().length < 140) {
-      $(".long-warning").remove();
-      $.ajax({
-        type: 'POST', 
-        url: "/tweets",
-        data: formData, 
-        success: (response) => {
-          console.log('POST request successful:', response);
-          console.log(formData);
-        },
-        error: function(error) {
-          console.error('POST request failed:', error);
-        }
-      }); 
-      loadTweets();
-    } else {
-      $("section").prepend(inputLengthWarning())
-    }
+$('form').on('submit', (event) => {
+  event.preventDefault();
+  const formData = $('form').serialize(); 
+  if ($('#tweet-text').val().length < 140) {
+    $(".long-warning").remove();
+    $.ajax({
+      type: 'POST', 
+      url: "/tweets",
+      data: formData, 
+      success: (response) => {
+        console.log('POST request successful:', response);
+      },
+      error: function(error) {
+        console.error('POST request failed:', error);
+      }
+    }); 
+    loadTweets();
+  } else {
+    $("section").prepend(inputLengthWarning());
+  }
 });
 
 
-  const loadTweets = () => {
-    $.ajax('/tweets', { method: 'GET' })
-    .then(function (data) {
-      console.log('Success: ', data);
-      renderTweets(data)
-    });
-  }
+const loadTweets = () => {
+  $.ajax('/tweets', { method: 'GET' })
+  .then(function (data) {
+    console.log('Success: ', data);
+    renderTweets(data);
+  });
+}
 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {

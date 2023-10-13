@@ -29,6 +29,9 @@ header {
   color: white;
 }
 
+/*
+ * Media Query for Mobile
+ */
 @media screen and (max-width: 768px) {
   header {
     max-width: 100%;

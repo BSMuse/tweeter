@@ -42,6 +42,9 @@ nav > span {
   font-size: 2rem;
 }
 
+/*
+ * Media Query for Mobile
+ */
 @media screen and (max-width: 768px) {
   nav {
     background-color: #B7C3F3;
