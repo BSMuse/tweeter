@@ -33,7 +33,6 @@ $('form').on('submit', (event) => {
   }
 });
 
-
 const loadTweets = () => {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (data) {
