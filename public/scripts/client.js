@@ -28,6 +28,7 @@ $('form').on('submit', (event) => {
       }
     }); 
     loadTweets();
+    $('#tweet-text').val('')
   } else {
     $("section").prepend(inputLengthWarning());
   }
