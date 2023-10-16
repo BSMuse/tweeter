@@ -11,33 +11,48 @@ $(document).ready(function() {
     }
   });
 
-$('form').on('submit', (event) => {
-  event.preventDefault();
-  const formData = $('form').serialize(); 
-  if ($('#tweet-text').val().length < 141) {
-    $(".long-warning").remove();
-    $.ajax({
-      type: 'POST', 
-      url: "/tweets",
-      data: formData, 
-      success: (response) => {
-        console.log('POST request successful:', response);
-      },
-      error: function(error) {
-        console.error('POST request failed:', error);
-      }
-    }); 
-    loadTweets();
-    $('#tweet-text').val('')
-  } else {
-    $("section").prepend(inputLengthWarning());
-  }
-});
+  $('form').on('submit', (event) => {
+    event.preventDefault();
+    const formData = $('form').serialize(); 
+    
+    // Remove any existing warnings
+    $(".warning").remove();
+    
+    if ($('#tweet-text').val().trim() === '') {
+      // Display an empty input warning
+      $("section").prepend(emptyWarning());
+    } else if ($('#tweet-text').val().length > 140) {
+      // Display a length warning for tweets that are too long
+      $("section").prepend(inputLengthWarning());
+    } else {
+      $.ajax({
+        type: 'POST',
+        url: "/tweets",
+        data: formData,
+        success: () => {
+          // Clear the input field
+          $('#tweet-text').val('');
+          
+          // Clear the .tweet-con div before rendering new tweets
+          $('.tweet-con').empty();
+          
+          // Fetch and render tweets
+          loadTweets();
+          
+          // Reset the character counter
+          $('.counter').text(140);
+        },
+        error: function(error) {
+          console.error('POST request failed:', error);
+        }
+      });
+    }
+  });
+  
 
 const loadTweets = () => {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (data) {
-    console.log('Success: ', data);
     renderTweets(data);
   });
 }
@@ -83,7 +98,7 @@ const createTweetElement = function(tweet) {
 
 const inputLengthWarning = () => {
   let $warning = $(
-    `<div class="long-warning">
+    `<div class="warning">
       <i class="fa-solid fa-triangle-exclamation"></i>
       <p>${$('<div>').text("WARNING! You are trying to submit too many characters!").html()}</p>
       <i class="fa-solid fa-triangle-exclamation"></i>
@@ -91,6 +106,18 @@ const inputLengthWarning = () => {
   );
   return $warning;
 };
+
+const emptyWarning = () => {
+  let $warning = $(
+    `<div class="warning">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <p>${$('<div>').text("WARNING! Your tweet cannot be empty!").html()}</p>
+      <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>`
+  );
+  return $warning;
+};
+
 
 loadTweets();
 });
