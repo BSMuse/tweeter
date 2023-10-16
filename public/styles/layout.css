@@ -18,35 +18,28 @@ body {
   font-size: 24px;
 }
 
+header, main {
+  flex: 1;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5em;
+}
+
+
 /*
  * Media Query for Mobile
  */
 @media screen and (max-width: 768px) {
-  body, header, main {
+  body, header, .main-content {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
 
   header, main {
     width: 100%;
-  }
-}
-
-/*
- * Media Query for Mobile
- */
-
-@media screen and (min-width: 769px) {
-  body {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  main {
-    background-color: red;
-  }
-  
-  header, main {
-    flex: 1;
   }
 }

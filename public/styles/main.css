@@ -1,14 +1,13 @@
 main {
+  margin-top: 200px;
+  display: flex;
+  justify-content: end;
   width: 100%;
-  margin-top: 120px;
   background-color: inherit;
 }
 
 section {
-  width: 100%;
-  background-color: white;
-  margin: 0 auto;
-  max-width: 500px;
+  width: 750px;
 }
 
 .warning {
@@ -19,18 +18,18 @@ section {
   border: red solid 5px;
   padding: 0.5rem;
   font-size: 1rem;
-  width: 100%;
+  width: 500px;
   margin: 0 auto;
 }
 
 .tweet-con {
   width: 100%;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 750px;
 }
 
 /*
- * Media Query for Tablets
+ * Media Query for Mobile
  */
 @media screen and (max-width: 768px) {
   main, section, .tweet-con {
@@ -41,14 +40,5 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-}
-
-/*
- * Media Query for Desktop
- */
-@media screen and (min-width: 769px) {
-  main, section, .tweet-con {
-    max-width: 500px;
   }
 }

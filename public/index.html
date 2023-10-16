@@ -34,28 +34,30 @@
       </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <img src="/images/profile-hex.png"> 
-          <div class="name">
-              <h2>Amy Manswell</h2>
+    <div class="main-content">
+      <header>
+          <div class="container">
+              <img src="/images/profile-hex.png"> 
+            <div class="name">
+                <h2>Amy Manswell</h2>
+            </div>
           </div>
-        </div>
-    </header>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main>
-      <section class="new-tweet">
-        <form action="/tweets" method="post">
-          <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder = "What are you humming about?"></textarea>
-          <div class="btn">
-            <button class="submit-btn" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-        <div class="tweet-con"></div>
-      </section>
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main>
+        <section class="new-tweet">
+          <form action="/tweets" method="post">
+            <label for="tweet-text"></label>
+            <textarea name="text" id="tweet-text" placeholder = "What are you humming about?"></textarea>
+            <div class="btn">
+              <button class="submit-btn" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+          <div class="tweet-con"></div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

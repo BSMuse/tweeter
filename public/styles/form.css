@@ -6,7 +6,7 @@ form {
   text-align: center;
   padding: 1rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
@@ -16,7 +16,7 @@ form {
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 600;
   width: 100%;
-  max-width: 436px;
+  max-width: 800px;
   height: 2.5rem;
   border-bottom: 3px solid #545149;
   margin-bottom: 1rem;
